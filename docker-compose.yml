@@ -1,0 +1,34 @@
+version: '2'
+services:
+  php:
+    build: ./php/
+    ports:
+      - 3000:80
+    links:
+      - db
+    volumes:
+      - ./cake/:/var/www/html
+  db:
+    build: ./mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: cake
+      MYSQL_USER: cake
+      MYSQL_PASSWORD: pass
+    volumes:
+      - db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:mariadb
+    ports:
+      - 3001:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=pass
+
+volumes:
+  db:
