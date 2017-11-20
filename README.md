@@ -7,7 +7,6 @@ docker and docker-compose environment.
 ## Usage
 1. put your cakephp project at `/cake/`.
 1. put your sql file at `/mysql/init/`.
-1. add `use cake;` to the beginning of the sql file.
 1. run `run.sh` or `run.bat`
 1. access to http://`YOUR DOCKER HOST IP`:3000/
 
