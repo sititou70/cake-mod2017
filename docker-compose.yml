@@ -7,7 +7,7 @@ services:
     links:
       - db
     volumes:
-      - ./cake/:/var/www/html
+      - $PWD/cake/:/var/www/html
   db:
     build: ./mysql/
     environment:
@@ -17,7 +17,7 @@ services:
       MYSQL_PASSWORD: pass
     volumes:
       - db:/var/lib/mysql
-      - ./mysql/init:/docker-entrypoint-initdb.d
+      - $PWD/mysql/init:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
