@@ -1,5 +1,5 @@
 # cake-mod2017
-Docker cakephp environment for mod2017.
+Docker cakephp environment for mod2017 and mod2018.
 
 ## Requirement
 docker and docker-compose environment.
