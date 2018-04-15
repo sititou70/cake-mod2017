@@ -1,3 +1,4 @@
+call win-tools\\docker-machine-start.bat
 call win-tools\\docker-machine-connect.bat
 
 copy database.php .\cake\app\Config
